@@ -1,0 +1,440 @@
+:root {
+  --bg-dark: #1c1c1e;
+  --bg-light: #ffffff;
+  --card-dark: #2c2c2e;
+  --accent: #00ffe0;
+  --text-light: #f5f5f5;
+
+  --neon-pink:#EC194C;
+}
+
+::after, ::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  box-sizing: border-box;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+.text-white{
+  color: var(--text-light);
+}
+
+/* Header */
+
+.header{
+  outline: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.2; /* make it subtle behind text */
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  color: var(--accent); /* matches your theme */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+
+/* welcome section */
+.welcome-section {
+  padding: 0rem 1rem;
+  background-color: var(--bg-dark);
+}
+
+.welcome-img {
+  max-height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid var(--neon-pink);
+  box-shadow: 5px 5px 5px var(--bg-light);
+}
+
+.welcome-text h2 {
+  font-size: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    text-align: center;
+    margin-top: 2rem;
+  }
+}
+
+.card .btn{
+display: flex;
+justify-self: center;
+}
+
+.btn-accent {
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  transition: all 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+.btn-outline-accent {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline-accent:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+#searchInput {
+  max-width: 200px;
+  transition: all 0.3s ease;
+}
+
+.row{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+.card {
+  background-color: var(--card-dark);
+  color: var(--text-light);
+  width: 18pc;
+  height: auto;
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/*  Auth styles */
+
+
+.auth-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.auth-modal {
+  background: var(--card-dark);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.auth-modal h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-modal input {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--accent);
+  background-color: transparent;
+  color: var(--text-light);
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+.auth-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+
+.text-small {
+  font-size: 0.85rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.close-btn {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  color: var(--accent);
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.password-wrapper i {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.d-none {
+  display: none;
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slider-row {
+  overflow: hidden;
+  height: 220px;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.scroll-track.paused {
+  animation-play-state: paused;
+}
+
+.media-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
+  margin-right: 15px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.media-item:hover {
+  transform: scale(1.05);
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.slider-row {
+  overflow: hidden;
+  height: 170px;
+  position: relative;
+}
+
+.scroll-track {
+  display: flex;
+width: max-content;
+margin-top: 10px;
+animation: scroll-left 1s linear infinite;
+}
+
+.scroll-track.paused {
+  animation-play-state: paused;
+}
+
+.col-sm-3{
+/* -ms-flex: 0 0 25%; */
+/* flex: 0 0 25%; */
+max-width: 50%;
+/* width: 100px; */
+}
+
+.card-title, .card-text{
+  text-align: center;
+}
+.media-item {
+  flex: 0 0 auto;
+  width: 250px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: rgb(0, 0, 0) 5px 5px 10px 1px;
+  transition: transform 0.3s;
+}
+
+.media-item-wrapper {
+  margin-right: 15px;
+}
+
+.media-item-wrapper:last-child {
+  margin-right: 0;
+}
+
+.media-item:hover {
+  transform: scale(1.05);
+  box-shadow: #fff 0 0 5px 5px;
+}
+
+.game_infinite_slider {
+  padding: 20px;
+  background: #111;
+}
+
+.game_infinite_slider .slider-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.game_infinite_slider .slider-row {
+  overflow: hidden;
+  height: 150px;
+  position: relative;
+}
+
+.game_infinite_slider .scroll-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left 30s linear infinite;
+}
+
+.game_infinite_slider .scroll-track.paused {
+  animation-play-state: paused;
+}
+
+.game_infinite_slider .media-item {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.game_infinite_slider .media-item:hover {
+  transform: scale(1.05);
+}
+
+#faqHeading1, #faqHeading2, #faqHeading3{
+  background: var(--card-dark);
+}
+.FAQ .card:hover {
+  scale: 0.97;
+  box-shadow: none !important;
+}
+
+
+
+@media only screen and (max-width: 575px) {
+  .support-button p {
+      font-size: 14px;
+  }
+}
+
+.support-button i {
+  color: #3f43fd;
+  font-size: 1.25rem;
+}
+@media only screen and (max-width: 575px) {
+  .support-button i {
+      font-size: 1rem;
+  }
+}
+
+.support-button a {
+  text-transform: capitalize;
+  color: #2ecc71;
+}
+@media only screen and (max-width: 575px) {
+  .support-button a {
+      font-size: 13px;
+  }
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* helper classes. */
+.test{
+  outline: 1px solid red;
+}
