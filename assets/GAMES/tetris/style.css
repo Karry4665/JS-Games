@@ -1,0 +1,91 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* background-color: lightblue; */
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+  font-family: 'Press Start 2P';
+}
+
+
+html {
+  font-size: 62.5%;
+}
+
+.background {
+  height: 100vh;
+  width: 100vw;
+  z-index: -10;
+  position: fixed;
+  object-fit: fill;
+}
+
+.overlay-bg {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 10%, rgb(39, 39, 39, 0.2) 100%);
+  position: fixed;
+  z-index: -9;
+}
+
+.score {
+  color: white;
+  margin-top: 1rem;
+}
+
+#canvas {
+  margin: 1rem;
+  border: 1px solid rgb(0, 102, 255);
+  background-color: transparent;
+  object-fit: contain;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 10%, rgba(17, 17, 17, 0.9) 100%), url(IMGS/background-img3.jpg);
+  box-shadow: 0.5rem 0.5rem 1.8rem rgba(3, 61, 138, 1);
+}
+
+.controls-container {
+  height: 20vh;
+  min-width: 20vw;
+  background-color: wheat;
+  position: fixed;
+  /* right: 5vh; */
+  left: 5vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.btn {
+  padding: .5rem 1rem;
+  border: none;
+  background-color: white;
+}
+
+#rotate-btn {
+  grid-column-start: 2;
+}
+
+#left-btn {
+  grid-column-start: 1;
+  grid-row-start: 2;
+}
+
+#right-btn {
+  grid-column-start: 3;
+  grid-row-start: 2;
+}
+
+#down-btn {
+  grid-column-start: 2;
+  grid-row-start: 3;
+}

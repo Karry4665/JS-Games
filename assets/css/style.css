@@ -398,21 +398,23 @@ max-width: 50%;
 
 /* Games section */
 .Games-section{
-  margin: 50px auto;
-  margin-top: 120px;
+  margin: 126px auto;
+  margin-top: 200px;
   text-align: center;
 }
 
 .Games-section h2{
- font-size: 72px;
+ font-size: 63px;
 }
 
 .Games-section p{
-  font-size: 30px;
+  font-size: 24px;
   color: #aaa;
+  margin-bottom: 20px;
 }
 
 .browse-games-btn{
+  margin: 20px 0;
   padding: 15px 40px; border-radius: 50px; font-weight: 500;
 }
 
