@@ -53,7 +53,7 @@
           <li class="nav-item"><a class="nav-link" href="#">Rules</a></li>
           <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Signup</a>
+            <a href="#" id="openAuthModal" class="nav-link">Signup</a>
           </li>
         </ul>
 
@@ -72,6 +72,7 @@
     <div class="hero-content">
       <h1 class="text-white">Play. Code. Repeat.</h1>
       <p> Dive Into the World of JavaScript Games!</p>
+      <button class="btn btn-accent">Start Playing</button>
     </div>
     <img class="hero-bg"
       src="https://imgs.search.brave.com/cDfrrCUX_e6j3I79Y4SxqORf04m3A61cTYRuXaT5K6Y/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJzLmNvbS9p/bWFnZXMvZmVhdHVy/ZWQvZ2FtaW5nLWNv/bnNvbGVzLWZsZGQ2/NWllcmpqeDJsYWYu/anBn"
@@ -101,7 +102,20 @@
   </section>
 
 
+  <!-- Display videos -->
+  <div class="device-container">
+    <img src="https://imgs.search.brave.com/rlF4DMzI8KIYmlk02QTA0GSggCGPXoDiLjGCMVOjV2c/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wMDgv/ODU0LzMxMi9zbWFs/bC9jb21wdXRlci1s/YXB0b3Atd2l0aC10/cmFuc3BhcmVudC1z/Y3JlZW4tZnJlZS1w/bmcucG5n" class="device-image" alt="Tablet">
+    <div class="screen-content">
+      <iframe 
+        src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
+        frameborder="0" 
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
   
+
+
 
   <!-- Game Cards -->
   <div class="row">
@@ -296,97 +310,17 @@
           <div class="scroll-track" id="track3"></div>
         </div>
       </div>
-
-      <script>
-        const mediaSets = {
-          track1: [
-            { type: 'img', src: 'https://img.youtube.com/vi/L_UPHsGR6fM/maxresdefault.jpg', link: 'https://youtu.be/L_UPHsGR6fM?si=IvDjdGr8qRtLeHme' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/SIpyhJGNwGo/maxresdefault.jpg', link: 'https://youtu.be/SIpyhJGNwGo?si=GOACwyJYOoaNUK3g' },
-
-
-            { type: 'img', src: 'https://img.youtube.com/vi/bOEb9eq2vRU/maxresdefault.jpg', link: 'https://youtu.be/bOEb9eq2vRU?si=fDNUyOTq90oirXJv' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/-YQ2orY4yyg/maxresdefault.jpg', link: 'https://youtu.be/-YQ2orY4yyg?si=tY4gZHVphePh9ZtD' },
-            { type: 'img', src: 'https://img.youtube.com/vi/B13xyZeHdlo/maxresdefault.jpg', link: 'https://youtu.be/B13xyZeHdlo?si=4Q4Q0ZRySMpniZyY' }
-          ],
-          track2: [
-            { type: 'img', src: 'https://img.youtube.com/vi/HzvpOtyJYGs/maxresdefault.jpg', link: 'https://youtu.be/HzvpOtyJYGs?si=csfDB4ivLzGb6b7v' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/UFGQdL0vwmY/maxresdefault.jpg', link: 'https://www.youtube.com/live/UFGQdL0vwmY?si=Olh_b3_WjRNcVKFP' },
-            { type: 'img', src: 'https://img.youtube.com/vi/wnNGzMn5csQ/maxresdefault.jpg', link: 'https://youtu.be/wnNGzMn5csQ?si=MD7EMHa82CsRSn2k' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/S6f6wWbvQSk/maxresdefault.jpg', link: 'https://youtu.be/S6f6wWbvQSk?si=dTMkRaDnfDsz2LCF' }
-          ],
-          track3: [
-            { type: 'img', src: 'https://img.youtube.com/vi/CElbYjc_5ic/maxresdefault.jpg', link: 'https://youtu.be/CElbYjc_5ic?si=9j1dTX03O1vkuJ6W' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/Bwye0hbbRWU/maxresdefault.jpg', link: 'https://youtu.be/S6f6wWbvQSk?si=dTMkRaDnfDsz2LCF' },
-            { type: 'img', src: 'https://img.youtube.com/vi/zIcI8Izyim8/maxresdefault.jpg', link: 'https://youtu.be/zIcI8Izyim8?si=ULCvQxmSy1wvS8e_' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/fxk9posx6Z8/maxresdefault.jpg', link: 'https://youtu.be/video11' },
-
-            { type: 'img', src: 'https://img.youtube.com/vi/UFGQdL0vwmY/maxresdefault.jpg', link: 'https://youtu.be/video12' }
-          ]
-        };
-
-        function createTrack(trackId, speedSeconds = 10) {
-          const track = document.getElementById(trackId);
-          const mediaItems = mediaSets[trackId];
-
-          function createMediaElement(item) {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'media-item-wrapper';
-
-            const a = document.createElement('a');
-            a.href = item.link;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-
-            if (item.type === 'img') {
-              const img = document.createElement('img');
-              img.src = item.src;
-              img.className = 'media-item';
-              a.appendChild(img);
-            } else if (item.type === 'video') {
-              const video = document.createElement('video');
-              video.src = item.src;
-              video.className = 'media-item';
-              video.autoplay = true;
-              video.loop = true;
-              video.muted = true;
-              a.appendChild(video);
-            }
-
-            wrapper.appendChild(a);
-            return wrapper;
-          }
-
-          // Append original and its clone
-          for (let i = 0; i < 2; i++) {
-            mediaItems.forEach(item => {
-              const element = createMediaElement(item);
-              track.appendChild(element);
-            });
-          }
-
-          track.style.animationDuration = `${speedSeconds}s`;
-
-          // Pause on hover
-          track.querySelectorAll('.media-item').forEach(item => {
-            item.addEventListener('mouseenter', () => track.classList.add('paused'));
-            item.addEventListener('mouseleave', () => track.classList.remove('paused'));
-          });
-        }
-
-        createTrack('track1', 30);
-        createTrack('track2', 35);
-        createTrack('track3', 40);
-      </script>
     </section>
 
 
-    
+    <section class="Games-section w-75">
+      <h2>Games for every mood and every group</h2>
+      <p>You will find over 15+ games in our library - from racing, sports, co-op, puzzle, quiz games and many more!
+      </p>
+      <p> The games come from Steam, Playstation, Xbox, Switch, AirConsole and our beloved developer community.</p>
+      <button class="btn btn-accent browse-games-btn">Browse Games</button>
+    </section>
+
     <section class="games_infinite_slider">
       <div class="slider-wrapper">
         <div class="slider-row">
@@ -399,74 +333,64 @@
           <div class="scroll-track" id="gameTrack3"></div>
         </div>
       </div>
-
-      <script>
-        const gameMediaSets = {
-          gameTrack1: [
-          { src: './assets/images/tetris.jpeg', link: 'games/candy-crush/index.html' },
-          { src: './assets/images/tic tac toe.svg', link: 'games/word-guessing/index.html' },
-          { src: './assets/images/space.jpeg', link: 'games/candy-crush/index.html' },
-            { src: './assets/images/guess.png', link: 'games/word-guessing/index.html' },
-            { src: './assets/images/quiz.jpeg', link: 'games/candy-crush/index.html' }
-          ],
-          gameTrack2: [
-          { src: './assets/images/map.jpeg', link: 'games/candy-crush/index.html' },
-          { src: './assets/images/whac a mole.jpeg', link: 'games/word-guessing/index.html' },
-          { src: './assets/images/snake.png', link: 'games/candy-crush/index.html' },
-          { src: './assets/images/mines.jpeg', link: 'games/word-guessing/index.html' },
-          { src: './assets/images/space.jpeg', link: 'games/candy-crush/index.html' }
-          ],
-          gameTrack3: [
-            { src: './assets/images/typing.jpeg', link: 'games/typing-speed/index.html' },
-            { src: './assets/images/candy.jpeg', link: 'games/candy-crush/index.html' },
-            { src: './assets/images/flappy.png', link: 'games/typing-speed/index.html' },
-            { src: './assets/images/dice.jpeg', link: 'games/candy-crush/index.html' },
-            { src: './assets/images/scramble.jpeg', link: 'games/typing-speed/index.html' },
-          ]
-        };
-
-        function createGameTrack(trackId, speedSeconds = 30) {
-          const track = document.getElementById(trackId);
-          const mediaItems = gameMediaSets[trackId];
-
-          function createMediaElement(item) {
-            const a = document.createElement('a');
-            a.href = item.link;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-
-            const img = document.createElement('img');
-            img.src = item.src;
-            img.className = 'media-item';
-
-            a.appendChild(img);
-            return a;
-          }
-
-          for (let i = 0; i < 2; i++) {
-            mediaItems.forEach(item => {
-              const element = createMediaElement(item);
-              track.appendChild(element);
-            });
-          }
-
-          track.style.animationDuration = `${speedSeconds}s`;
-
-          track.querySelectorAll('.media-item').forEach(item => {
-            item.addEventListener('mouseenter', () => track.classList.add('paused'));
-            item.addEventListener('mouseleave', () => track.classList.remove('paused'));
-          });
-        }
-
-        createGameTrack('gameTrack1', 25);
-        createGameTrack('gameTrack2', 30);
-        createGameTrack('gameTrack3', 35);
-      </script>
     </section>
     
-    <section class="FAQ">
+    <!-- Premium JS games section -->
+    <section class="premium-section col-xs-12 w-100">
+      <div class="container text-center">
+        <!-- Title -->
+        <h2 class="mb-3 text-accent display-5 fw-bold">JS GAMES Premium Benefits</h2>
+        <!-- Description -->
+        <p class="mb-5 fs-5 text-white">Subscribing to JS Games Premium will give you and everyone playing with you the following features:</p>
+    
+        <!-- Cards Row -->
+        <div class="card-container test w-100">
+    
+          <!-- Card -->
+          <div class="">
+            <div class="premium-card ">
+              <i class="bi bi-controller icon"></i>
+              <h6 class="mt-3">All games unlocked</h6>
+            </div>
+          </div>
+    
+          <div class="">
+            <div class="premium-card">
+              <i class="bi bi-people-fill icon"></i>
+              <h6 class="mt-3">Unlimited Players</h6>
+            </div>
+          </div>
+    
+          <div class="">
+            <div class="premium-card">
+              <i class="bi bi-pause-circle icon"></i>
+              <h6 class="mt-3">No ad breaks</h6>
+            </div>
+          </div>
+    
+          <div class="">
+            <div class="premium-card">
+              <i class="bi bi-stars icon"></i>
+              <h6 class="mt-3">Unique skins & levels</h6>
+            </div>
+          </div>
+    
+          <div class="">
+            <div class="premium-card">
+              <i class="bi bi-heart-fill icon"></i>
+              <h6 class="mt-3">Support the team</h6>
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </section>
+    
+
+
+    <section class="FAQ w-75">
       <!-- FAQ Section with Full-Width Cards -->
-<div class="w-100 py-5 px-2">
+    <div class="w-100 py-5 px-2 ">
   <h2 class="text-center mb-4">Frequently Asked Questions</h2>
   <div class="accordion w-100" id="faqTable">
 
@@ -520,13 +444,73 @@
         </div>
       </div>
     </div>
-
+    <div class="help-section">
+      <p>Your question was not answererd? <a href="#">Ask here !</a></p>
+    </div>
   </div>
 </div>
 
     </section>
 
     <!-- footer goes here -->
+
+<!-- Add this in your HTML file -->
+<footer class="bg-dark text-light pt-5 pb-4">
+  <div class="container">
+    <div class="row">
+
+      <!-- Info Column -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 text-accent">Info</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Company</a></li>
+        </ul>
+      </div>
+
+      <!-- Support Column -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 text-accent">Support</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Help</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- More Column -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 text-accent">More</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Know us</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Swag Shop</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media Column -->
+      <div class="col-md-3 mb-4">
+        <h5 class="text-uppercase fw-bold mb-3 text-accent">Social Media</h5>
+        <div class="d-flex gap-3">
+          <a href="https://www.instagram.com/anshbegmirza/" class="text-light fs-4"><i class="bi bi-instagram"></i></a>
+          <a href="https://x.com/anshbegmirza" class="text-light fs-4"><i class="bi bi-facebook"></i></a>
+          <a href="https://x.com/anshbegmirza" class="text-light fs-4"><i class="bi bi-twitter"></i></a>
+          <a href="https://x.com/anshbegmirza" class="text-light fs-4"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="text-center mt-4 border-top pt-3 small">
+      <p class="mb-1">Copyright © Cyborg Media, 2025.</p>
+      <p class="mb-0">This site uses cookies. <a href="#" class="text-decoration-underline text-light">See privacy policy</a>.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
