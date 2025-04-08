@@ -513,6 +513,49 @@ max-width: 50%;
 }
 
 
+/* Experts Section */
+
+.experts{
+  margin: 40px auto;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.experts h1{
+  margin-bottom: 20px;
+}
+
+.experts p{
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.expert-card-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+.expert-card{
+  height: max-content;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+}
+
+
+.expert-img{
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+
+
 /* Faq section */
 
 .FAQ{

@@ -46,12 +46,12 @@
       <!-- Right: Nav Links + Search -->
       <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
         <ul class="navbar-nav align-items-center me-3">
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Games</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Experts</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Partners & Prizes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Rules</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#About">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#Games">Games</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experts">Experts</a></li>
+          <li class="nav-item"><a class="nav-link" href="#premium-section">Premium</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#">Rules</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li> -->
           <li class="nav-item">
             <a href="#" id="openAuthModal" class="nav-link">Signup</a>
           </li>
@@ -68,7 +68,7 @@
     </div>
   </nav>
   <!-- Tagline Section -->
-  <div class="hero-section">
+  <div id="About" class="hero-section">
     <div class="hero-content">
       <h1 class="text-white">Play. Code. Repeat.</h1>
       <p> Dive Into the World of JavaScript Games!</p>
@@ -118,9 +118,11 @@
 
 
   <!-- Game Cards -->
-  <div class="row">
+  <div id="Games" class="row">
+    
     <!-- Game Cards Section -->
     <div class="container my-5">
+      <h2 class="text-center text-accent">GAMES</h2>
       <div class="row g-4">
         <div class="col-sm-3">
           <div class="card">
@@ -336,7 +338,7 @@
     </section>
     
     <!-- Premium JS games section -->
-    <section class="premium-section col-xs-12 w-100">
+    <section id="premium-section" class="premium-section col-xs-12 w-100">
       <div class="container text-center">
         <!-- Title -->
         <h2 class="mb-3 text-accent display-5 fw-bold">JS GAMES Premium Benefits</h2>
@@ -383,9 +385,49 @@
           </div>
     
         </div>
+        <button class="btn btn-accent w-25" style="margin: 40px 0; padding: 20px 10px; font-size: 32px; font-weight: 500; border-radius: 20px; margin-top: 70px;">Buy Now !</button>
       </div>
     </section>
     
+    <section id="experts" class="experts">
+      <h1 class="text-accent">🎮 Gamer Hall of Fame 👑</h1>
+      <p>⚡ Not All Heroes Wear Capes. Some Game Their Way to Glory 🎮🏆</p>
+   <div class="expert-card-container">
+    <div class="card expert-card">
+      <img class="expert-img" src="assets/images/experts/karan.jpg" alt="">
+   <h6>Karan Mehta</h4>
+          <p>Sweet Swipe Master 🍭✨</p>
+      </div>
+  
+      <div class="card expert-card">
+        <img class="expert-img" src="assets/images/experts/navin.jpg" alt="">
+     <h6>Navin Rathod</h4>
+            <p>🎮 Gaming is Life. Full-Time Mode: ON 🔥</p>
+        </div>
+  
+  
+        <div class="card expert-card">
+          <img class="expert-img" src="assets/images/experts/ansh.jpg" alt="">
+       <h6>Anash Mirza</h4>
+              <p>The Brain Behind the Moves 🧠🕵️‍♂️♟️</p>
+          </div>
+  
+          <div class="card expert-card">
+            <img class="expert-img" src="assets/images/experts/zaid.jpg" alt="">
+         <h6>Zaid Shaikh</h4>
+                <p>Arcade Legend in Action 👾🚀🔥</p>
+            </div>
+  
+            <div class="card expert-card">
+              <img class="expert-img" src="assets/images/experts/harsh.jpg" alt="">
+           <h6>Harsh Sharma</h4>
+                  <p>Classic Console Crusher 🎮📻🚀</p>
+              </div>
+  
+  
+   </div>
+
+    </section>
 
 
     <section class="FAQ w-75">
