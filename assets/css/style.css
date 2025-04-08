@@ -517,6 +517,7 @@ max-width: 50%;
 
 .experts{
   margin: 40px auto;
+  margin-top: 20px;
   text-align: center;
   padding: 10px 15px;
 }
@@ -525,9 +526,9 @@ max-width: 50%;
   margin-bottom: 20px;
 }
 
-.experts p{
+.experts-tagline{
   font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .expert-card-container{
@@ -544,16 +545,19 @@ max-width: 50%;
   align-items: center;
   padding: 10px 15px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 
-.expert-img{
-  height: 200px;
+.expert-img {
   width: 200px;
-  object-fit: contain;
+  height: 200px;
+  object-fit: cover;
   border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
-
 
 
 /* Faq section */
